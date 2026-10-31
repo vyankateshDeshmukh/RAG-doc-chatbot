@@ -1,0 +1,32 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment secrets
+.env
+
+# Local databases
+chroma_db/
+logs/*.db
+logs/*.sqlite
+
+# Uploaded personal documents
+documents/*.pdf
+!documents/.gitkeep
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Test artifacts
+logs/test_telemetry.db
