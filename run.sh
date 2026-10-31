@@ -1,6 +1,6 @@
 #!/bin/bash
 # ==============================================================
-# RAG Document Bot & LLM Monitoring Launch Script
+# AskMyDocs – Document Intelligence & LLM Monitoring Launch Script
 # ==============================================================
 
 set -e
@@ -8,7 +8,7 @@ PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$PROJECT_DIR"
 
 echo "=========================================================="
-echo " Starting RAG Document Bot + LLM Telemetry Platform"
+echo " Starting AskMyDocs – Your Documents. Your Answers."
 echo "=========================================================="
 
 # 1. Check OmniRoute
@@ -43,7 +43,7 @@ fi
 # 4. Launch FastAPI Application
 PORT=8000
 echo ""
-echo "🚀 Launching DocuRAG Web Server on http://localhost:$PORT"
+echo "🚀 Launching AskMyDocs Web Server on http://localhost:$PORT"
 echo "👉 Open http://localhost:$PORT in your web browser"
 echo ""
 

@@ -1,6 +1,6 @@
-# RAG Document Bot + LLM Cost & Performance Monitoring
+# AskMyDocs – Your Documents. Your Answers.
 
-> **College Project**: A dual-purpose AI system combining **grounded document retrieval (RAG)** with real-time **telemetry observability** (latency, token ledger, per-model cost accounting, and quality tracking).
+> **AskMyDocs**: Enterprise-grade AI document intelligence platform combining grounded retrieval-augmented generation (RAG) with real-time observability (latency, token ledger, per-model cost accounting, and performance metrics).
 
 ---
 

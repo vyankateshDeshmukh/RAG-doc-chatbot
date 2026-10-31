@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" width="280" height="64" fill="none">
+  <defs>
+    <linearGradient id="logo_teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2DD4BF" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="logo_spark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#14B8A6" />
+    </linearGradient>
+    <linearGradient id="logo_text_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2DD4BF" />
+      <stop offset="100%" stop-color="#0EA5E9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Icon Mark Container -->
+  <g transform="translate(4, 8)">
+    <rect width="48" height="48" rx="12" fill="#111827" stroke="#1F293D" stroke-width="1.5"/>
+    <g transform="translate(8, 8) scale(1)">
+      <!-- Document + Speech Pointer -->
+      <path d="M7.5 7C7.5 5.34315 8.84315 4 10.5 4H18L24.5 10.5V21.5C24.5 23.1569 23.1569 24.5 21.5 24.5H15.5L11 28V24.5H10.5C8.84315 24.5 7.5 23.1569 7.5 21.5V7Z"
+            fill="rgba(20, 184, 166, 0.16)" stroke="url(#logo_teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M18 4V9.5C18 10.0523 18.4477 10.5 19 10.5H24.5"
+            stroke="url(#logo_teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="rgba(6, 182, 212, 0.28)"/>
+      <path d="M16 11C16 12.8 14.6 14 13 14C14.6 14 16 15.2 16 17C16 15.2 17.4 14 19 14C17.4 14 16 12.8 16 11Z"
+            fill="url(#logo_spark)"/>
+      <line x1="12" y1="19.5" x2="20" y2="19.5" stroke="#38BDF8" stroke-width="1.6" stroke-linecap="round" stroke-opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- Typography: Wordmark -->
+  <text x="64" y="35" font-family="'Inter', -apple-system, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.5px">
+    <tspan fill="#F8FAFC">AskMy</tspan><tspan fill="url(#logo_text_grad)">Docs</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="65" y="50" font-family="'Inter', -apple-system, sans-serif" font-size="10.5" font-weight="500" fill="#94A3B8" letter-spacing="0.2px">
+    Your Documents. Your Answers.
+  </text>
+</svg>

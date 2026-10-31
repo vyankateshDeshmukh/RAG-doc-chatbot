@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DocuRAG Enterprise Dark Theme Stylesheet
+   AskMyDocs Enterprise Dark Theme Stylesheet
    Modern AI SaaS Design System: Deep Charcoal Navy & Precision Teal Accents
    ========================================================================== */
 
@@ -140,8 +140,8 @@ body {
 }
 
 .brand-icon {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-md);
   background: var(--accent-teal-subtle);
   border: 1px solid var(--accent-teal-border);
@@ -150,6 +150,18 @@ body {
   justify-content: center;
   color: var(--accent-teal);
   flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.brand-icon:hover {
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 12px rgba(20, 184, 166, 0.25);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .brand-text h1 {
@@ -157,6 +169,31 @@ body {
   font-weight: 700;
   letter-spacing: -0.025em;
   color: var(--text-primary);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.brand-text .brand-accent {
+  color: var(--accent-teal);
+  background: linear-gradient(135deg, #2DD4BF 0%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-tagline {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-top: 3px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .brand-tagline {
+    display: none;
+  }
 }
 
 /* Navigation Tabs */

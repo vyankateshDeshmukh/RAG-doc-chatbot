@@ -80,9 +80,9 @@ class OmniRouteClient:
         self.groq_api_key = os.getenv("GROQ_API_KEY", "")
         self.groq_enabled = bool(self.groq_api_key)
         if self.groq_enabled:
-            print("[OmniRoute] ✓ Groq direct fallback enabled (free tier)")
+            print("[OmniRoute] [OK] Groq direct fallback enabled (free tier)")
         else:
-            print("[OmniRoute] ⚠ No GROQ_API_KEY set — Groq fallback disabled. Set it in .env for reliable access.")
+            print("[OmniRoute] [WARN] No GROQ_API_KEY set — Groq fallback disabled. Set it in .env for reliable access.")
 
     def calculate_cost(self, model: str, prompt_tokens: int, completion_tokens: int) -> float:
         """
@@ -346,7 +346,7 @@ class OmniRouteClient:
 
                         total_latency = (time.perf_counter() - overall_start) * 1000.0
                         cost_usd = self.calculate_cost(parsed["resolved_model"], parsed["prompt_tokens"], parsed["completion_tokens"])
-                        print(f"[OmniRoute] ✓ Success with '{parsed['resolved_model']}' in {latency_ms:.0f}ms")
+                        print(f"[OmniRoute] [OK] Success with '{parsed['resolved_model']}' in {latency_ms:.0f}ms")
 
                         return {
                             "success": True,
@@ -422,7 +422,7 @@ class OmniRouteClient:
                             parsed["total_tokens"] = parsed["prompt_tokens"] + parsed["completion_tokens"]
 
                         cost_usd = self.calculate_cost(gm, parsed["prompt_tokens"], parsed["completion_tokens"])
-                        print(f"[Groq] ✓ Success with '{gm}' in {latency_ms:.0f}ms")
+                        print(f"[Groq] [OK] Success with '{gm}' in {latency_ms:.0f}ms")
 
                         return {
                             "success": True,

@@ -1,5 +1,5 @@
 /**
- * DocuRAG – Document Intelligence & LLM Observability Frontend Logic
+ * AskMyDocs – Document Intelligence & LLM Observability Frontend Logic
  */
 
 // State
@@ -377,18 +377,17 @@ function appendMessage({ role, content, citations, telemetry, model, error }) {
     }
 
     msgDiv.innerHTML = `
-      <div class="message-avatar">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="10" rx="2"></rect>
-          <circle cx="12" cy="5" r="2"></circle>
-          <path d="M12 7v4"></path>
-          <line x1="8" y1="16" x2="8" y2="16"></line>
-          <line x1="16" y1="16" x2="16" y2="16"></line>
+      <div class="message-avatar" aria-label="AskMyDocs">
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
+          <path d="M7.5 7C7.5 5.34 8.84 4 10.5 4H18L24.5 10.5V21.5C24.5 23.16 23.16 24.5 21.5 24.5H15.5L11 28V24.5H10.5C8.84 24.5 7.5 23.16 7.5 21.5V7Z" fill="rgba(20, 184, 166, 0.16)" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 4V9.5C18 10.05 18.45 10.5 19 10.5H24.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 11C16 12.8 14.6 14 13 14C14.6 14 16 15.2 16 17C16 15.2 17.4 14 19 14C17.4 14 16 12.8 16 11Z" fill="currentColor"/>
+          <line x1="12" y1="19.5" x2="20" y2="19.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         </svg>
       </div>
       <div class="message-body">
         <div class="message-meta-header">
-          <span class="agent-name">DocuRAG</span>
+          <span class="agent-name">AskMyDocs</span>
           ${error ? '<span class="status-badge fail">Error</span>' : '<span class="status-badge success">Grounded</span>'}
         </div>
         <div class="message-content">${formatMarkdown(content)}</div>
@@ -408,17 +407,18 @@ function appendTypingIndicator(id) {
   div.id = id;
   div.className = 'message assistant-message typing-indicator-msg';
   div.innerHTML = `
-    <div class="message-avatar">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="3" y="11" width="18" height="10" rx="2"></rect>
-        <circle cx="12" cy="5" r="2"></circle>
-        <path d="M12 7v4"></path>
+    <div class="message-avatar" aria-label="AskMyDocs">
+      <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
+        <path d="M7.5 7C7.5 5.34 8.84 4 10.5 4H18L24.5 10.5V21.5C24.5 23.16 23.16 24.5 21.5 24.5H15.5L11 28V24.5H10.5C8.84 24.5 7.5 23.16 7.5 21.5V7Z" fill="rgba(20, 184, 166, 0.16)" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18 4V9.5C18 10.05 18.45 10.5 19 10.5H24.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 11C16 12.8 14.6 14 13 14C14.6 14 16 15.2 16 17C16 15.2 17.4 14 19 14C17.4 14 16 12.8 16 11Z" fill="currentColor"/>
+        <line x1="12" y1="19.5" x2="20" y2="19.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
       </svg>
     </div>
     <div class="message-body typing-body">
       <div class="typing-content">
         <span class="typing-dot"></span>
-        <span>Retrieving vector chunks & generating answer...</span>
+        <span>AskMyDocs is retrieving vector chunks & generating answer...</span>
       </div>
     </div>
   `;

@@ -1,5 +1,5 @@
 """
-FastAPI Server for RAG Document Bot & LLM Performance/Cost Monitoring
+FastAPI Server for AskMyDocs – Document Intelligence & LLM Performance/Cost Monitoring
 Exposes REST endpoints for:
 - PDF upload and vector indexing
 - Grounded RAG chat with citations
@@ -76,7 +76,7 @@ print("[Server] Initializing Telemetry tracker...")
 telemetry = TelemetryTracker(db_path=TELEMETRY_DB_PATH)
 
 app = FastAPI(
-    title="RAG Document Bot & Monitoring",
+    title="AskMyDocs - Document Intelligence & Observability API",
     description="Grounded AI Question Answering with Live Latency, Token & Cost Observability",
     version="1.0.0"
 )
@@ -241,9 +241,23 @@ STATIC_DIR = os.path.join(PROJECT_ROOT, "static")
 if os.path.exists(STATIC_DIR):
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
+@app.get("/favicon.ico", include_in_schema=False)
+def get_favicon_ico():
+    ico = os.path.join(STATIC_DIR, "favicon.ico")
+    if os.path.exists(ico):
+        return FileResponse(ico, media_type="image/x-icon")
+    raise HTTPException(status_code=404)
+
+@app.get("/favicon.svg", include_in_schema=False)
+def get_favicon_svg():
+    svg = os.path.join(STATIC_DIR, "favicon.svg")
+    if os.path.exists(svg):
+        return FileResponse(svg, media_type="image/svg+xml")
+    raise HTTPException(status_code=404)
+
 @app.api_route("/", methods=["GET", "HEAD"])
 def serve_index():
     index_file = os.path.join(STATIC_DIR, "index.html")
     if os.path.exists(index_file):
         return FileResponse(index_file)
-    return JSONResponse({"message": "RAG Document Bot Backend API Running. Static UI not yet created."})
+    return JSONResponse({"message": "AskMyDocs Backend API Running. Static UI not yet created."})
