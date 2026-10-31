@@ -338,29 +338,9 @@ function appendMessage({ role, content, citations, telemetry, model, error }) {
       </div>
     `;
   } else {
-    // Assistant message with Citations and Telemetry Badge
+    // Citations box intentionally hidden per user preference
+    // Source references still appear inline inside the answer text as [Source N] badges
     let citationsHtml = '';
-    if (citations && citations.length > 0) {
-      citationsHtml = `
-        <div class="citations-container">
-          <div class="citations-header" onclick="this.nextElementSibling.classList.toggle('hidden')">
-            <span>Retrieved Sources (${citations.length})</span>
-            <span class="citations-toggle-hint">View Chunks ▾</span>
-          </div>
-          <div class="citations-grid">
-            ${citations.map(c => `
-              <div class="citation-card">
-                <div class="citation-top">
-                  <span class="citation-source">[Source ${c.index}] ${escapeHtml(c.source)} (p. ${c.page})</span>
-                  <span class="citation-match">${Math.round(c.similarity * 100)}% match</span>
-                </div>
-                <div class="citation-snippet">"${escapeHtml(c.snippet)}..."</div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `;
-    }
 
     let telemetryHtml = '';
     if (telemetry) {
